@@ -1,0 +1,21 @@
+docker run --rm --interactive --tty   --volume "%cd%":/app composer create-project laravel/laravel demo
+
+docker run -d --rm -v "%cd%"/demo:/app laravel_app 
+
+docker exec -u 0 -it <id o nombre del contenedor> bash
+passwd root
+
+// obtener los usuarios en linux
+
+cat /etc/passwd
+cut -d: -f1 /etc/passwd
+cut -d: -f1 /etc/passwd | sort
+
+getent shadow | grep -Po '^[^:]*(?=:.?:)'
+
+//agregar usuarios
+
+useradd usuario
+
+// cambiar usuairos de una carpeta
+chown -R www:www storage
